@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROMANTICA'98 invitro - The Phrenetics</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #000;
+    color: #aaa;
+    font: 16px/1.3 "Perfect DOS VGA 437", "Lucida Console", Consolas, monospace;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #screen {
+    display: none;
+    width: min(100vw, calc((100vh - 4rem) * 4 / 3));
+    aspect-ratio: 4 / 3;
+    image-rendering: pixelated;
+    touch-action: none;
+  }
+  .dos {
+    white-space: pre;
+    padding: 1rem;
+  }
+  #setup {
+    border: 2px double #aaa;
+    background: #0000aa;
+    color: #fff;
+    padding: 1rem 2rem;
+  }
+  #setup h1 { font-size: 1em; margin: 0 0 1em; color: #ff5; }
+  #setup button {
+    display: block;
+    width: 100%;
+    margin: .2em 0;
+    padding: .2em .5em;
+    font: inherit;
+    text-align: left;
+    color: #fff;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  #setup button:focus, #setup button:hover { background: #aaa; color: #000; outline: 0; }
+  #pad { display: none; gap: 1rem; margin-top: .5rem; }
+  #pad button {
+    font: inherit;
+    padding: .4rem 1.2rem;
+    background: #222;
+    color: #aaa;
+    border: 1px solid #555;
+    touch-action: none;
+  }
+  #end { display: none; align-self: stretch; }
+  #end a { color: #aaa; }
+</style>
+</head>
+<body>
+  <div id="setup" class="dos">
+    <h1>Useless Sound System v1.0 setup  (c) 1996 FreddyV/Useless</h1>Select sound output
+<button id="sound" autofocus>Autodetect best device</button><button id="nosound">No sound</button>
+  </div>
+
+  <canvas id="screen" width="320" height="200"></canvas>
+  <div id="pad">
+    <button data-key="left">&larr;</button>
+    <button data-key="esc">ESC</button>
+    <button data-key="right">&rarr;</button>
+  </div>
+
+  <div id="end" class="dos"></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

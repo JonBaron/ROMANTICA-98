@@ -1,0 +1,19 @@
+# Rust-bygg
+invit-rs/target/
+
+# Kopieres inn av web/serve.ps1 ved lokal testing; bygges/kopieres av GitHub Actions
+web/invit.wasm
+web/HIGH_HPS.XM
+site/
+
+# .NET-bygg av utpakkingsverktøyet
+rekonstruksjon/unpack-tool/bin/
+rekonstruksjon/unpack-tool/obj/
+
+# Editor/OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+Desktop.ini
+.DS_Store

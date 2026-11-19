@@ -1,0 +1,1233 @@
+00000000 FFDF                 (bad)
+0000083C EB34                 jmp     short 00000872h
+00000872 C6057008000080       mov     byte ptr ds:[870h],80h
+00000879 C6057108000001       mov     byte ptr ds:[871h],1
+00000880 A10C080000           mov     eax,ds:[80Ch]
+00000885 C1E00A               shl     eax,0Ah
+00000888 A340080000           mov     ds:[840h],eax
+0000088D A110080000           mov     eax,ds:[810h]
+00000892 C1E00A               shl     eax,0Ah
+00000895 A350080000           mov     ds:[850h],eax
+0000089A A114080000           mov     eax,ds:[814h]
+0000089F C1E00A               shl     eax,0Ah
+000008A2 A344080000           mov     ds:[844h],eax
+000008A7 A118080000           mov     eax,ds:[818h]
+000008AC C1E00A               shl     eax,0Ah
+000008AF A354080000           mov     ds:[854h],eax
+000008B4 A124080000           mov     eax,ds:[824h]
+000008B9 2B050C080000         sub     eax,ds:[80Ch]
+000008BF C1E008               shl     eax,8
+000008C2 A348080000           mov     ds:[848h],eax
+000008C7 A128080000           mov     eax,ds:[828h]
+000008CC 2B0510080000         sub     eax,ds:[810h]
+000008D2 C1E008               shl     eax,8
+000008D5 A358080000           mov     ds:[858h],eax
+000008DA A11C080000           mov     eax,ds:[81Ch]
+000008DF 2B0514080000         sub     eax,ds:[814h]
+000008E5 C1E008               shl     eax,8
+000008E8 A34C080000           mov     ds:[84Ch],eax
+000008ED A120080000           mov     eax,ds:[820h]
+000008F2 2B0518080000         sub     eax,ds:[818h]
+000008F8 C1E008               shl     eax,8
+000008FB A35C080000           mov     ds:[85Ch],eax
+00000900 C6053E08000004       mov     byte ptr ds:[83Eh],4
+00000907 A144080000           mov     eax,ds:[844h]
+0000090C C1E80A               shr     eax,0Ah
+0000090F 8B1D40080000         mov     ebx,ds:[840h]
+00000915 C1EB0A               shr     ebx,0Ah
+00000918 2BC3                 sub     eax,ebx
+0000091A C1E008               shl     eax,8
+0000091D A364080000           mov     ds:[864h],eax
+00000922 A154080000           mov     eax,ds:[854h]
+00000927 C1E80A               shr     eax,0Ah
+0000092A 8B1D50080000         mov     ebx,ds:[850h]
+00000930 C1EB0A               shr     ebx,0Ah
+00000933 2BC3                 sub     eax,ebx
+00000935 C1E008               shl     eax,8
+00000938 A36C080000           mov     ds:[86Ch],eax
+0000093D 8B1D40080000         mov     ebx,ds:[840h]
+00000943 891D60080000         mov     ds:[860h],ebx
+00000949 8B1550080000         mov     edx,ds:[850h]
+0000094F 891568080000         mov     ds:[868h],edx
+00000955 B104                 mov     cl,4
+00000957 A168080000           mov     eax,ds:[868h]
+0000095C 8B3560080000         mov     esi,ds:[860h]
+00000962 C1E80A               shr     eax,0Ah
+00000965 C1EE0A               shr     esi,0Ah
+00000968 C1E008               shl     eax,8
+0000096B 8B1564080000         mov     edx,ds:[864h]
+00000971 03F0                 add     esi,eax
+00000973 011560080000         add     ds:[860h],edx
+00000979 81E6FFFF0000         and     esi,0FFFFh
+0000097F 8B1D6C080000         mov     ebx,ds:[86Ch]
+00000985 0335CC1D0000         add     esi,ds:[1DCCh]
+0000098B 011D68080000         add     ds:[868h],ebx
+00000991 A4                   movsb
+00000992 FEC9                 dec     cl
+00000994 75C1                 jne     short 00000957h
+00000996 B840010000           mov     eax,140h
+0000099B 83E804               sub     eax,4
+0000099E 03F8                 add     edi,eax
+000009A0 A148080000           mov     eax,ds:[848h]
+000009A5 010540080000         add     ds:[840h],eax
+000009AB A158080000           mov     eax,ds:[858h]
+000009B0 010550080000         add     ds:[850h],eax
+000009B6 A14C080000           mov     eax,ds:[84Ch]
+000009BB 010544080000         add     ds:[844h],eax
+000009C1 A15C080000           mov     eax,ds:[85Ch]
+000009C6 010554080000         add     ds:[854h],eax
+000009CC FE0D3E080000         dec     byte ptr ds:[83Eh]
+000009D2 0F852FFFFFFF         jne     near ptr 00000907h
+000009D8 C3                   ret
+000009D9 81E7FF010000         and     edi,1FFh
+000009DF D1E7                 shl     edi,1
+000009E1 33C0                 xor     eax,eax
+000009E3 668B8702000000       mov     ax,[edi+2]
+000009EA D1E8                 shr     eax,1
+000009EC C3                   ret
+000009ED 66BADA03             mov     dx,3DAh
+000009F1 EC                   in      al,dx
+000009F2 2408                 and     al,8
+000009F4 75FB                 jne     short 000009F1h
+000009F6 EC                   in      al,dx
+000009F7 2408                 and     al,8
+000009F9 74FB                 je      short 000009F6h
+000009FB C3                   ret
+000009FC EB30                 jmp     short 00000A2Eh
+00000A2E 66A106080000         mov     ax,ds:[806h]
+00000A34 25FF010000           and     eax,1FFh
+00000A39 D1E0                 shl     eax,1
+00000A3B 8BF0                 mov     esi,eax
+00000A3D 33C0                 xor     eax,eax
+00000A3F 668B8602000000       mov     ax,[esi+2]
+00000A46 2D00010000           sub     eax,100h
+00000A4B A3FE090000           mov     ds:[9FEh],eax
+00000A50 33C0                 xor     eax,eax
+00000A52 668B8604040000       mov     ax,[esi+404h]
+00000A59 2D00010000           sub     eax,100h
+00000A5E A30A0A0000           mov     ds:[0A0Ah],eax
+00000A63 66A108080000         mov     ax,ds:[808h]
+00000A69 25FF010000           and     eax,1FFh
+00000A6E D1E0                 shl     eax,1
+00000A70 8BF0                 mov     esi,eax
+00000A72 33C0                 xor     eax,eax
+00000A74 668B8602000000       mov     ax,[esi+2]
+00000A7B 2D00010000           sub     eax,100h
+00000A80 A3020A0000           mov     ds:[0A02h],eax
+00000A85 33C0                 xor     eax,eax
+00000A87 668B8604040000       mov     ax,[esi+404h]
+00000A8E 2D00010000           sub     eax,100h
+00000A93 A30E0A0000           mov     ds:[0A0Eh],eax
+00000A98 66A10A080000         mov     ax,ds:[80Ah]
+00000A9E 25FF010000           and     eax,1FFh
+00000AA3 D1E0                 shl     eax,1
+00000AA5 8BF0                 mov     esi,eax
+00000AA7 33C0                 xor     eax,eax
+00000AA9 668B8602000000       mov     ax,[esi+2]
+00000AB0 2D00010000           sub     eax,100h
+00000AB5 A3060A0000           mov     ds:[0A06h],eax
+00000ABA 33C0                 xor     eax,eax
+00000ABC 668B8604040000       mov     ax,[esi+404h]
+00000AC3 2D00010000           sub     eax,100h
+00000AC8 A3120A0000           mov     ds:[0A12h],eax
+00000ACD A12C080000           mov     eax,ds:[82Ch]
+00000AD2 F72D0E0A0000         imul    dword ptr ds:[0A0Eh]
+00000AD8 A134080000           mov     eax,ds:[834h]
+00000ADD F72D020A0000         imul    dword ptr ds:[0A02h]
+00000AE3 2905160A0000         sub     ds:[0A16h],eax
+00000AE9 C13D160A000008       sar     dword ptr ds:[0A16h],8
+00000AF0 A130080000           mov     eax,ds:[830h]
+00000AF5 F72D120A0000         imul    dword ptr ds:[0A12h]
+00000AFB A31A0A0000           mov     ds:[0A1Ah],eax
+00000B00 A1160A0000           mov     eax,ds:[0A16h]
+00000B05 F72D060A0000         imul    dword ptr ds:[0A06h]
+00000B0B 29051A0A0000         sub     ds:[0A1Ah],eax
+00000B11 C13D1A0A000008       sar     dword ptr ds:[0A1Ah],8
+00000B18 A134080000           mov     eax,ds:[834h]
+00000B1D F72D0E0A0000         imul    dword ptr ds:[0A0Eh]
+00000B23 A31E0A0000           mov     ds:[0A1Eh],eax
+00000B28 A12C080000           mov     eax,ds:[82Ch]
+00000B2D F72D020A0000         imul    dword ptr ds:[0A02h]
+00000B33 01051E0A0000         add     ds:[0A1Eh],eax
+00000B39 C13D1E0A000008       sar     dword ptr ds:[0A1Eh],8
+00000B40 A1160A0000           mov     eax,ds:[0A16h]
+00000B45 F72D120A0000         imul    dword ptr ds:[0A12h]
+00000B4B A130080000           mov     eax,ds:[830h]
+00000B50 F72D060A0000         imul    dword ptr ds:[0A06h]
+00000B56 0105220A0000         add     ds:[0A22h],eax
+00000B5C C13D220A000009       sar     dword ptr ds:[0A22h],9
+00000B63 A11E0A0000           mov     eax,ds:[0A1Eh]
+00000B68 F72D0A0A0000         imul    dword ptr ds:[0A0Ah]
+00000B6E A3260A0000           mov     ds:[0A26h],eax
+00000B73 A11A0A0000           mov     eax,ds:[0A1Ah]
+00000B78 F72DFE090000         imul    dword ptr ds:[9FEh]
+00000B7E 0105260A0000         add     ds:[0A26h],eax
+00000B84 C13D260A000009       sar     dword ptr ds:[0A26h],9
+00000B8B A11A0A0000           mov     eax,ds:[0A1Ah]
+00000B90 F72D0A0A0000         imul    dword ptr ds:[0A0Ah]
+00000B96 A32A0A0000           mov     ds:[0A2Ah],eax
+00000B9B A11E0A0000           mov     eax,ds:[0A1Eh]
+00000BA0 F72DFE090000         imul    dword ptr ds:[9FEh]
+00000BA6 29052A0A0000         sub     ds:[0A2Ah],eax
+00000BAC C13D2A0A000009       sar     dword ptr ds:[0A2Ah],9
+00000BB3 A12A0A0000           mov     eax,ds:[0A2Ah]
+00000BB8 A334080000           mov     ds:[834h],eax
+00000BBD A1220A0000           mov     eax,ds:[0A22h]
+00000BC2 A32C080000           mov     ds:[82Ch],eax
+00000BC7 A1260A0000           mov     eax,ds:[0A26h]
+00000BCC A330080000           mov     ds:[830h],eax
+00000BD1 C3                   ret
+00000BD2 66B842EE             mov     ax,0EE42h
+00000BD6 CD31                 int     31h
+00000BD8 0F8239110000         jb      near ptr 00001D17h
+00000BDE C3                   ret
+00000BDF EB37                 jmp     short 00000C18h
+00000C17 00893D0E0C00         add     [ecx+0C0E3Dh],cl
+00000C1D 0066B8               add     [esi-48h],ah
+00000C20 02EE                 add     ch,dh
+00000C22 CD31                 int     31h
+00000C24 BA20130000           mov     edx,1320h
+00000C29 E8A4FFFFFF           call    00000BD2h
+00000C2E 8915010C0000         mov     ds:[0C01h],edx
+00000C34 8B15AE1D0000         mov     edx,ds:[1DAEh]
+00000C3A B43D                 mov     ah,3Dh
+00000C3C B000                 mov     al,0
+00000C3E CD21                 int     21h
+00000C40 A338080000           mov     ds:[838h],eax
+00000C45 B901130000           mov     ecx,1301h
+00000C4A 8B15010C0000         mov     edx,ds:[0C01h]
+00000C50 8B1D38080000         mov     ebx,ds:[838h]
+00000C56 B43F                 mov     ah,3Fh
+00000C58 CD21                 int     21h
+00000C5A 8B1D38080000         mov     ebx,ds:[838h]
+00000C60 B43E                 mov     ah,3Eh
+00000C62 CD21                 int     21h
+00000C64 A1010C0000           mov     eax,ds:[0C01h]
+00000C69 A30A0C0000           mov     ds:[0C0Ah],eax
+00000C6E 81050A0C000001100000 add     dword ptr ds:[0C0Ah],1001h
+00000C78 C605130C000040       mov     byte ptr ds:[0C13h],40h
+00000C7F C605120C000040       mov     byte ptr ds:[0C12h],40h
+00000C86 C705140C000000000000 mov     dword ptr ds:[0C14h],0
+00000C90 8B35010C0000         mov     esi,ds:[0C01h]
+00000C96 33C0                 xor     eax,eax
+00000C98 8A06                 mov     al,[esi]
+00000C9A 668BD8               mov     bx,ax
+00000C9D 66D1E0               shl     ax,1
+00000CA0 6603C3               add     ax,bx
+00000CA3 03050A0C0000         add     eax,ds:[0C0Ah]
+00000CA9 0305140C0000         add     eax,ds:[0C14h]
+00000CAF 8BF8                 mov     edi,eax
+00000CB1 33C0                 xor     eax,eax
+00000CB3 8A07                 mov     al,[edi]
+00000CB5 66C1E003             shl     ax,3
+00000CB9 A3E10B0000           mov     ds:[0BE1h],eax
+00000CBE 33C0                 xor     eax,eax
+00000CC0 8A4601               mov     al,[esi+1]
+00000CC3 668BD8               mov     bx,ax
+00000CC6 66D1E0               shl     ax,1
+00000CC9 6603C3               add     ax,bx
+00000CCC 03050A0C0000         add     eax,ds:[0C0Ah]
+00000CD2 0305140C0000         add     eax,ds:[0C14h]
+00000CD8 8BF8                 mov     edi,eax
+00000CDA 33C0                 xor     eax,eax
+00000CDC 8A07                 mov     al,[edi]
+00000CDE 66C1E003             shl     ax,3
+00000CE2 A3E50B0000           mov     ds:[0BE5h],eax
+00000CE7 33C0                 xor     eax,eax
+00000CE9 8A4640               mov     al,[esi+40h]
+00000CEC 668BD8               mov     bx,ax
+00000CEF 66D1E0               shl     ax,1
+00000CF2 6603C3               add     ax,bx
+00000CF5 03050A0C0000         add     eax,ds:[0C0Ah]
+00000CFB 0305140C0000         add     eax,ds:[0C14h]
+00000D01 8BF8                 mov     edi,eax
+00000D03 33C0                 xor     eax,eax
+00000D05 8A07                 mov     al,[edi]
+00000D07 66C1E003             shl     ax,3
+00000D0B A3E90B0000           mov     ds:[0BE9h],eax
+00000D10 33C0                 xor     eax,eax
+00000D12 8A4641               mov     al,[esi+41h]
+00000D15 668BD8               mov     bx,ax
+00000D18 66D1E0               shl     ax,1
+00000D1B 6603C3               add     ax,bx
+00000D1E 03050A0C0000         add     eax,ds:[0C0Ah]
+00000D24 0305140C0000         add     eax,ds:[0C14h]
+00000D2A 8BF8                 mov     edi,eax
+00000D2C 33C0                 xor     eax,eax
+00000D2E 8A07                 mov     al,[edi]
+00000D30 66C1E003             shl     ax,3
+00000D34 A3ED0B0000           mov     ds:[0BEDh],eax
+00000D39 8B3D0E0C0000         mov     edi,ds:[0C0Eh]
+00000D3F 033D140C0000         add     edi,ds:[0C14h]
+00000D45 8B1DE90B0000         mov     ebx,ds:[0BE9h]
+00000D4B A1E10B0000           mov     eax,ds:[0BE1h]
+00000D50 2BD8                 sub     ebx,eax
+00000D52 C1E312               shl     ebx,12h
+00000D55 891DF10B0000         mov     ds:[0BF1h],ebx
+00000D5B 8B1DED0B0000         mov     ebx,ds:[0BEDh]
+00000D61 A1E50B0000           mov     eax,ds:[0BE5h]
+00000D66 2BD8                 sub     ebx,eax
+00000D68 C1E312               shl     ebx,12h
+00000D6B 891DF50B0000         mov     ds:[0BF5h],ebx
+00000D71 A1E10B0000           mov     eax,ds:[0BE1h]
+00000D76 C1E014               shl     eax,14h
+00000D79 A3F90B0000           mov     ds:[0BF9h],eax
+00000D7E A1E50B0000           mov     eax,ds:[0BE5h]
+00000D83 C1E014               shl     eax,14h
+00000D86 A3FD0B0000           mov     ds:[0BFDh],eax
+00000D8B C605090C000004       mov     byte ptr ds:[0C09h],4
+00000D92 A1F90B0000           mov     eax,ds:[0BF9h]
+00000D97 C1E814               shr     eax,14h
+00000D9A 8B1DFD0B0000         mov     ebx,ds:[0BFDh]
+00000DA0 C1EB14               shr     ebx,14h
+00000DA3 2BD8                 sub     ebx,eax
+00000DA5 C1E312               shl     ebx,12h
+00000DA8 8BD0                 mov     edx,eax
+00000DAA C1E214               shl     edx,14h
+00000DAD B904000000           mov     ecx,4
+00000DB2 03D3                 add     edx,ebx
+00000DB4 8BC2                 mov     eax,edx
+00000DB6 C1E815               shr     eax,15h
+00000DB9 8807                 mov     [edi],al
+00000DBB 83C703               add     edi,3
+00000DBE 49                   dec     ecx
+00000DBF 75F1                 jne     short 00000DB2h
+00000DC1 81C7F4020000         add     edi,2F4h
+00000DC7 A1F10B0000           mov     eax,ds:[0BF1h]
+00000DCC 0105F90B0000         add     ds:[0BF9h],eax
+00000DD2 A1F50B0000           mov     eax,ds:[0BF5h]
+00000DD7 0105FD0B0000         add     ds:[0BFDh],eax
+00000DDD FE0D090C0000         dec     byte ptr ds:[0C09h]
+00000DE3 75AD                 jne     short 00000D92h
+00000DE5 FF05140C0000         inc     dword ptr ds:[0C14h]
+00000DEB 833D140C000002       cmp     dword ptr ds:[0C14h],2
+00000DF2 0F8698FEFFFF         jbe     near ptr 00000C90h
+00000DF8 83050E0C00000C       add     dword ptr ds:[0C0Eh],0Ch
+00000DFF FF05010C0000         inc     dword ptr ds:[0C01h]
+00000E05 FE0D120C0000         dec     byte ptr ds:[0C12h]
+00000E0B 0F8575FEFFFF         jne     near ptr 00000C86h
+00000E11 81050E0C000000090000 add     dword ptr ds:[0C0Eh],900h
+00000E1B FE0D130C0000         dec     byte ptr ds:[0C13h]
+00000E21 0F8558FEFFFF         jne     near ptr 00000C7Fh
+00000E27 C3                   ret
+00000E28 BF00000A00           mov     edi,0A0000h
+00000E2D 66B8054F             mov     ax,4F05h
+00000E31 6633DB               xor     bx,bx
+00000E34 66BA0000             mov     dx,0
+00000E38 CD10                 int     10h
+00000E3A 66B90080             mov     cx,8000h
+00000E3E AD                   lodsd
+00000E3F 8BD8                 mov     ebx,eax
+00000E41 C1EB03               shr     ebx,3
+00000E44 66C1E30B             shl     bx,0Bh
+00000E48 8BD0                 mov     edx,eax
+00000E4A C1EA0A               shr     edx,0Ah
+00000E4D 6683E23F             and     dx,3Fh
+00000E51 66C1E205             shl     dx,5
+00000E55 6633DA               xor     bx,dx
+00000E58 8BD0                 mov     edx,eax
+00000E5A C1EA13               shr     edx,13h
+00000E5D 6683E21F             and     dx,1Fh
+00000E61 6633DA               xor     bx,dx
+00000E64 668BC3               mov     ax,bx
+00000E67 66AB                 stosw
+00000E69 6649                 dec     cx
+00000E6B 75D1                 jne     short 00000E3Eh
+00000E6D 66B8054F             mov     ax,4F05h
+00000E71 6633DB               xor     bx,bx
+00000E74 66BA0100             mov     dx,1
+00000E78 CD10                 int     10h
+00000E7A 66B9007A             mov     cx,7A00h
+00000E7E BF00000A00           mov     edi,0A0000h
+00000E83 AD                   lodsd
+00000E84 8BD8                 mov     ebx,eax
+00000E86 C1EB03               shr     ebx,3
+00000E89 66C1E30B             shl     bx,0Bh
+00000E8D 8BD0                 mov     edx,eax
+00000E8F C1EA0A               shr     edx,0Ah
+00000E92 6683E23F             and     dx,3Fh
+00000E96 66C1E205             shl     dx,5
+00000E9A 6633DA               xor     bx,dx
+00000E9D 8BD0                 mov     edx,eax
+00000E9F C1EA13               shr     edx,13h
+00000EA2 6683E21F             and     dx,1Fh
+00000EA6 6633DA               xor     bx,dx
+00000EA9 668BC3               mov     ax,bx
+00000EAC 66AB                 stosw
+00000EAE 6649                 dec     cx
+00000EB0 75D1                 jne     short 00000E83h
+00000EB2 C3                   ret
+00000EB3 EB20                 jmp     short 00000ED5h
+00000ED5 893DB90E0000         mov     ds:[0EB9h],edi
+00000EDB 83F800               cmp     eax,0
+00000EDE 7564                 jne     short 00000F44h
+00000EE0 66B802EE             mov     ax,0EE02h
+00000EE4 CD31                 int     31h
+00000EE6 8B15AE1D0000         mov     edx,ds:[1DAEh]
+00000EEC B43D                 mov     ah,3Dh
+00000EEE B000                 mov     al,0
+00000EF0 CD21                 int     21h
+00000EF2 A3BD0E0000           mov     ds:[0EBDh],eax
+00000EF7 33C9                 xor     ecx,ecx
+00000EF9 33D2                 xor     edx,edx
+00000EFB 8B1DBD0E0000         mov     ebx,ds:[0EBDh]
+00000F01 B442                 mov     ah,42h
+00000F03 B002                 mov     al,2
+00000F05 CD21                 int     21h
+00000F07 A3CD0E0000           mov     ds:[0ECDh],eax
+00000F0C 66B802EE             mov     ax,0EE02h
+00000F10 CD31                 int     31h
+00000F12 33C9                 xor     ecx,ecx
+00000F14 33D2                 xor     edx,edx
+00000F16 8B1DBD0E0000         mov     ebx,ds:[0EBDh]
+00000F1C B442                 mov     ah,42h
+00000F1E B000                 mov     al,0
+00000F20 CD21                 int     21h
+00000F22 8B0DCD0E0000         mov     ecx,ds:[0ECDh]
+00000F28 8B15C50E0000         mov     edx,ds:[0EC5h]
+00000F2E 8B1DBD0E0000         mov     ebx,ds:[0EBDh]
+00000F34 B43F                 mov     ah,3Fh
+00000F36 CD21                 int     21h
+00000F38 8B1DBD0E0000         mov     ebx,ds:[0EBDh]
+00000F3E B43E                 mov     ah,3Eh
+00000F40 CD21                 int     21h
+00000F42 EB0A                 jmp     short 00000F4Eh
+00000F44 A1B21D0000           mov     eax,ds:[1DB2h]
+00000F49 A3C50E0000           mov     ds:[0EC5h],eax
+00000F4E 8B35C50E0000         mov     esi,ds:[0EC5h]
+00000F54 8B3DB90E0000         mov     edi,ds:[0EB9h]
+00000F5A 33C0                 xor     eax,eax
+00000F5C 33DB                 xor     ebx,ebx
+00000F5E 668B5E08             mov     bx,[esi+8]
+00000F62 6643                 inc     bx
+00000F64 66891DC10E0000       mov     ds:[0EC1h],bx
+00000F6B 668B460A             mov     ax,[esi+0Ah]
+00000F6F 6640                 inc     ax
+00000F71 66A3C30E0000         mov     ds:[0EC3h],ax
+00000F77 F7E3                 mul     ebx
+00000F79 A3C90E0000           mov     ds:[0EC9h],eax
+00000F7E 81C680000000         add     esi,80h
+00000F84 33D2                 xor     edx,edx
+00000F86 33C0                 xor     eax,eax
+00000F88 8B3DB90E0000         mov     edi,ds:[0EB9h]
+00000F8E AC                   lodsb
+00000F8F 8AD8                 mov     bl,al
+00000F91 80E3C0               and     bl,0C0h
+00000F94 80FBC0               cmp     bl,0C0h
+00000F97 7510                 jne     short 00000FA9h
+00000F99 33C9                 xor     ecx,ecx
+00000F9B 668BC8               mov     cx,ax
+00000F9E 6683E13F             and     cx,3Fh
+00000FA2 AC                   lodsb
+00000FA3 03D1                 add     edx,ecx
+00000FA5 F3AA                 rep stosb
+00000FA7 EB02                 jmp     short 00000FABh
+00000FA9 AA                   stosb
+00000FAA 42                   inc     edx
+00000FAB 3B15C90E0000         cmp     edx,ds:[0EC9h]
+00000FB1 76DB                 jbe     short 00000F8Eh
+00000FB3 8B35CD0E0000         mov     esi,ds:[0ECDh]
+00000FB9 81EE01030000         sub     esi,301h
+00000FBF 0335C50E0000         add     esi,ds:[0EC5h]
+00000FC5 AC                   lodsb
+00000FC6 3C0C                 cmp     al,0Ch
+00000FC8 75FB                 jne     short 00000FC5h
+00000FCA 8935B50E0000         mov     ds:[0EB5h],esi
+00000FD0 66B90000             mov     cx,0
+00000FD4 66BAC803             mov     dx,3C8h
+00000FD8 8AC1                 mov     al,cl
+00000FDA EE                   out     dx,al
+00000FDB 6642                 inc     dx
+00000FDD AC                   lodsb
+00000FDE C0E802               shr     al,2
+00000FE1 EE                   out     dx,al
+00000FE2 AC                   lodsb
+00000FE3 C0E802               shr     al,2
+00000FE6 EE                   out     dx,al
+00000FE7 AC                   lodsb
+00000FE8 C0E802               shr     al,2
+00000FEB EE                   out     dx,al
+00000FEC 6641                 inc     cx
+00000FEE 6681F9FF00           cmp     cx,0FFh
+00000FF3 76DF                 jbe     short 00000FD4h
+00000FF5 C3                   ret
+00000FF6 EB08                 jmp     short 00001000h
+00001000 57                   push    edi
+00001001 56                   push    esi
+00001002 66B802EE             mov     ax,0EE02h
+00001006 CD31                 int     31h
+00001008 5A                   pop     edx
+00001009 B43D                 mov     ah,3Dh
+0000100B B000                 mov     al,0
+0000100D CD21                 int     21h
+0000100F A338080000           mov     ds:[838h],eax
+00001014 33C9                 xor     ecx,ecx
+00001016 33D2                 xor     edx,edx
+00001018 8B1D38080000         mov     ebx,ds:[838h]
+0000101E B442                 mov     ah,42h
+00001020 B002                 mov     al,2
+00001022 CD21                 int     21h
+00001024 A3CD0E0000           mov     ds:[0ECDh],eax
+00001029 33C9                 xor     ecx,ecx
+0000102B 33D2                 xor     edx,edx
+0000102D 8B1D38080000         mov     ebx,ds:[838h]
+00001033 B442                 mov     ah,42h
+00001035 B000                 mov     al,0
+00001037 CD21                 int     21h
+00001039 8B0DCD0E0000         mov     ecx,ds:[0ECDh]
+0000103F 5A                   pop     edx
+00001040 8B1D38080000         mov     ebx,ds:[838h]
+00001046 B43F                 mov     ah,3Fh
+00001048 CD21                 int     21h
+0000104A 8B1D38080000         mov     ebx,ds:[838h]
+00001050 B43E                 mov     ah,3Eh
+00001052 CD21                 int     21h
+00001054 C3                   ret
+00001055 EB08                 jmp     short 0000105Fh
+0000105F C605A81D000001       mov     byte ptr ds:[1DA8h],1
+00001066 8BFE                 mov     edi,esi
+00001068 66C705AA1D0000FFFF   mov     word ptr ds:[1DAAh],0FFFFh
+00001071 C605A91D000003       mov     byte ptr ds:[1DA9h],3
+00001078 32F6                 xor     dh,dh
+0000107A 32FF                 xor     bh,bh
+0000107C 8A57FD               mov     dl,[edi-3]
+0000107F 8A5F03               mov     bl,[edi+3]
+00001082 6603D3               add     dx,bx
+00001085 32E4                 xor     ah,ah
+00001087 8A8703FDFFFF         mov     al,[edi-2FDh]
+0000108D 8A9FFD020000         mov     bl,[edi+2FDh]
+00001093 6603C3               add     ax,bx
+00001096 6603D0               add     dx,ax
+00001099 32E4                 xor     ah,ah
+0000109B 32FF                 xor     bh,bh
+0000109D 8A8700FDFFFF         mov     al,[edi-300h]
+000010A3 8A9F00030000         mov     bl,[edi+300h]
+000010A9 6603C3               add     ax,bx
+000010AC 6603D0               add     dx,ax
+000010AF 32E4                 xor     ah,ah
+000010B1 32FF                 xor     bh,bh
+000010B3 8A87FDFCFFFF         mov     al,[edi-303h]
+000010B9 8A9F03030000         mov     bl,[edi+303h]
+000010BF 6603C3               add     ax,bx
+000010C2 6603D0               add     dx,ax
+000010C5 668BC2               mov     ax,dx
+000010C8 66C1E803             shr     ax,3
+000010CC AA                   stosb
+000010CD FE0DA91D0000         dec     byte ptr ds:[1DA9h]
+000010D3 75A3                 jne     short 00001078h
+000010D5 66FF0DAA1D0000       dec     word ptr ds:[1DAAh]
+000010DC 7593                 jne     short 00001071h
+000010DE FE0DA81D0000         dec     byte ptr ds:[1DA8h]
+000010E4 0F857CFFFFFF         jne     near ptr 00001066h
+000010EA 8BFE                 mov     edi,esi
+000010EC 81C700FD0200         add     edi,2FD00h
+000010F2 B900030000           mov     ecx,300h
+000010F7 32FF                 xor     bh,bh
+000010F9 32E4                 xor     ah,ah
+000010FB 8A9F03FDFFFF         mov     bl,[edi-2FDh]
+00001101 889F00FDFFFF         mov     [edi-300h],bl
+00001107 8A8700FDFFFF         mov     al,[edi-300h]
+0000110D 6603C3               add     ax,bx
+00001110 8A9FFDFCFFFF         mov     bl,[edi-303h]
+00001116 6603C3               add     ax,bx
+00001119 8A9F00FAFFFF         mov     bl,[edi-600h]
+0000111F 6603C3               add     ax,bx
+00001122 66C1E802             shr     ax,2
+00001126 AA                   stosb
+00001127 49                   dec     ecx
+00001128 75CD                 jne     short 000010F7h
+0000112A C3                   ret
+0000112B EB08                 jmp     short 00001135h
+00001135 8B1D131F0000         mov     ebx,ds:[1F13h]
+0000113B 81E3FF010000         and     ebx,1FFh
+00001141 D1E3                 shl     ebx,1
+00001143 668B8302000000       mov     ax,[ebx+2]
+0000114A 98                   cwde
+0000114B 8BC8                 mov     ecx,eax
+0000114D A331110000           mov     ds:[1131h],eax
+00001152 8B1D131F0000         mov     ebx,ds:[1F13h]
+00001158 C1F804               sar     eax,4
+0000115B 03D8                 add     ebx,eax
+0000115D 81E3FF010000         and     ebx,1FFh
+00001163 D1E3                 shl     ebx,1
+00001165 668B8304040000       mov     ax,[ebx+404h]
+0000116C 98                   cwde
+0000116D A32D110000           mov     ds:[112Dh],eax
+00001172 C1252D11000003       shl     dword ptr ds:[112Dh],3
+00001179 C1253111000003       shl     dword ptr ds:[1131h],3
+00001180 C1E005               shl     eax,5
+00001183 C1E105               shl     ecx,5
+00001186 8BD0                 mov     edx,eax
+00001188 8BF1                 mov     esi,ecx
+0000118A 8B3DE01D0000         mov     edi,ds:[1DE0h]
+00001190 4F                   dec     edi
+00001191 66B9C800             mov     cx,0C8h
+00001195 52                   push    edx
+00001196 56                   push    esi
+00001197 0FC9                 bswap   ecx
+00001199 66B94001             mov     cx,140h
+0000119D 8BC2                 mov     eax,edx
+0000119F 031531110000         add     edx,ds:[1131h]
+000011A5 8BDE                 mov     ebx,esi
+000011A7 0FC8                 bswap   eax
+000011A9 2B352D110000         sub     esi,ds:[112Dh]
+000011AF C1EB10               shr     ebx,10h
+000011B2 47                   inc     edi
+000011B3 02FC                 add     bh,ah
+000011B5 8A8313290000         mov     al,[ebx+2913h]
+000011BB 6649                 dec     cx
+000011BD 8807                 mov     [edi],al
+000011BF 75DC                 jne     short 0000119Dh
+000011C1 0FC9                 bswap   ecx
+000011C3 5E                   pop     esi
+000011C4 5A                   pop     edx
+000011C5 A12D110000           mov     eax,ds:[112Dh]
+000011CA 03D0                 add     edx,eax
+000011CC A131110000           mov     eax,ds:[1131h]
+000011D1 03F0                 add     esi,eax
+000011D3 6649                 dec     cx
+000011D5 75BE                 jne     short 00001195h
+000011D7 C3                   ret
+000011D8 EB0A                 jmp     short 000011E4h
+000011E4 8B35B21D0000         mov     esi,ds:[1DB2h]
+000011EA B9FFFFFFFF           mov     ecx,0FFFFFFFFh
+000011EF 8A06                 mov     al,[esi]
+000011F1 46                   inc     esi
+000011F2 41                   inc     ecx
+000011F3 3C00                 cmp     al,0
+000011F5 75F8                 jne     short 000011EFh
+000011F7 66890DAA1D0000       mov     ds:[1DAAh],cx
+000011FE C705DC11000000000000 mov     dword ptr ds:[11DCh],0
+00001208 BB05000000           mov     ebx,5
+0000120D B840010000           mov     eax,140h
+00001212 F7E3                 mul     ebx
+00001214 8BD8                 mov     ebx,eax
+00001216 A10F1F0000           mov     eax,ds:[1F0Fh]
+0000121B F7E3                 mul     ebx
+0000121D 8BF8                 mov     edi,eax
+0000121F 033D0B1F0000         add     edi,ds:[1F0Bh]
+00001225 033DAE1D0000         add     edi,ds:[1DAEh]
+0000122B 33C0                 xor     eax,eax
+0000122D 8B35B21D0000         mov     esi,ds:[1DB2h]
+00001233 0335DC110000         add     esi,ds:[11DCh]
+00001239 8A06                 mov     al,[esi]
+0000123B 3C3E                 cmp     al,3Eh
+0000123D 7525                 jne     short 00001264h
+0000123F 8105AE1D000040010000 add     dword ptr ds:[1DAEh],140h
+00001249 C7050B1F000008000000 mov     dword ptr ds:[1F0Bh],8
+00001253 C7050F1F000023000000 mov     dword ptr ds:[1F0Fh],23h
+0000125D B000                 mov     al,0
+0000125F E9E7000000           jmp     near ptr 0000134Bh
+00001264 3C5B                 cmp     al,5Bh
+00001266 7511                 jne     short 00001279h
+00001268 C705E011000003000000 mov     dword ptr ds:[11E0h],3
+00001272 B000                 mov     al,0
+00001274 E9D2000000           jmp     near ptr 0000134Bh
+00001279 3C5D                 cmp     al,5Dh
+0000127B 7511                 jne     short 0000128Eh
+0000127D C705E011000000000000 mov     dword ptr ds:[11E0h],0
+00001287 B000                 mov     al,0
+00001289 E9BD000000           jmp     near ptr 0000134Bh
+0000128E 3C5F                 cmp     al,5Fh
+00001290 7519                 jne     short 000012ABh
+00001292 BB10000000           mov     ebx,10h
+00001297 D1EB                 shr     ebx,1
+00001299 011D0F1F0000         add     ds:[1F0Fh],ebx
+0000129F C7050B1F000000000000 mov     dword ptr ds:[1F0Bh],0
+000012A9 B000                 mov     al,0
+000012AB 3C5C                 cmp     al,5Ch
+000012AD 7519                 jne     short 000012C8h
+000012AF B000                 mov     al,0
+000012B1 83050F1F000010       add     dword ptr ds:[1F0Fh],10h
+000012B8 FF050F1F0000         inc     dword ptr ds:[1F0Fh]
+000012BE C7050B1F000000000000 mov     dword ptr ds:[1F0Bh],0
+000012C8 3C20                 cmp     al,20h
+000012CA 7E78                 jle     short 00001344h
+000012CC BBFFFFFFFF           mov     ebx,0FFFFFFFFh
+000012D1 43                   inc     ebx
+000012D2 3A83E7250000         cmp     al,[ebx+25E7h]
+000012D8 75F7                 jne     short 000012D1h
+000012DA 8BC3                 mov     eax,ebx
+000012DC BB0D000000           mov     ebx,0Dh
+000012E1 43                   inc     ebx
+000012E2 F7E3                 mul     ebx
+000012E4 8BF0                 mov     esi,eax
+000012E6 0335CC250000         add     esi,ds:[25CCh]
+000012EC 0335D0250000         add     esi,ds:[25D0h]
+000012F2 46                   inc     esi
+000012F3 46                   inc     esi
+000012F4 C605DA11000010       mov     byte ptr ds:[11DAh],10h
+000012FB 8B1DE0110000         mov     ebx,ds:[11E0h]
+00001301 001DDA110000         add     ds:[11DAh],bl
+00001307 C605DB1100000D       mov     byte ptr ds:[11DBh],0Dh
+0000130E 8A06                 mov     al,[esi]
+00001310 3C00                 cmp     al,0
+00001312 7402                 je      short 00001316h
+00001314 8807                 mov     [edi],al
+00001316 46                   inc     esi
+00001317 47                   inc     edi
+00001318 FE0DDB110000         dec     byte ptr ds:[11DBh]
+0000131E 75EE                 jne     short 0000130Eh
+00001320 B805000000           mov     eax,5
+00001325 BB40010000           mov     ebx,140h
+0000132A F7E3                 mul     ebx
+0000132C 83E80D               sub     eax,0Dh
+0000132F 03F8                 add     edi,eax
+00001331 A1D0250000           mov     eax,ds:[25D0h]
+00001336 83E80D               sub     eax,0Dh
+00001339 40                   inc     eax
+0000133A 03F0                 add     esi,eax
+0000133C FE0DDA110000         dec     byte ptr ds:[11DAh]
+00001342 75C3                 jne     short 00001307h
+00001344 83050B1F00000B       add     dword ptr ds:[1F0Bh],0Bh
+0000134B FF05DC110000         inc     dword ptr ds:[11DCh]
+00001351 66FF0DAA1D0000       dec     word ptr ds:[1DAAh]
+00001358 0F85AAFEFFFF         jne     near ptr 00001208h
+0000135E C3                   ret
+0000135F 8B3DE01D0000         mov     edi,ds:[1DE0h]
+00001365 81C7A8900000         add     edi,90A8h
+0000136B 8B35D81D0000         mov     esi,ds:[1DD8h]
+00001371 A1041E0000           mov     eax,ds:[1E04h]
+00001376 BB5A000000           mov     ebx,5Ah
+0000137B F7E3                 mul     ebx
+0000137D 03F0                 add     esi,eax
+0000137F BB55000000           mov     ebx,55h
+00001384 B958000000           mov     ecx,58h
+00001389 8A06                 mov     al,[esi]
+0000138B 3C00                 cmp     al,0
+0000138D 7402                 je      short 00001391h
+0000138F 8807                 mov     [edi],al
+00001391 47                   inc     edi
+00001392 46                   inc     esi
+00001393 49                   dec     ecx
+00001394 75F3                 jne     short 00001389h
+00001396 81C7E8000000         add     edi,0E8h
+0000139C 81C66A010000         add     esi,16Ah
+000013A2 4B                   dec     ebx
+000013A3 75DF                 jne     short 00001384h
+000013A5 C3                   ret
+000013A6 8B3DE01D0000         mov     edi,ds:[1DE0h]
+000013AC 81C740010000         add     edi,140h
+000013B2 8B35DC1D0000         mov     esi,ds:[1DDCh]
+000013B8 81C640010000         add     esi,140h
+000013BE BB26000000           mov     ebx,26h
+000013C3 B940010000           mov     ecx,140h
+000013C8 8A06                 mov     al,[esi]
+000013CA 3C00                 cmp     al,0
+000013CC 7402                 je      short 000013D0h
+000013CE 8807                 mov     [edi],al
+000013D0 47                   inc     edi
+000013D1 46                   inc     esi
+000013D2 49                   dec     ecx
+000013D3 75F3                 jne     short 000013C8h
+000013D5 4B                   dec     ebx
+000013D6 75EB                 jne     short 000013C3h
+000013D8 C3                   ret
+000013D9 8B35B50E0000         mov     esi,ds:[0EB5h]
+000013DF B9FD020000           mov     ecx,2FDh
+000013E4 AC                   lodsb
+000013E5 C0E802               shr     al,2
+000013E8 AA                   stosb
+000013E9 49                   dec     ecx
+000013EA 75F8                 jne     short 000013E4h
+000013EC BFAC220000           mov     edi,22ACh
+000013F1 B903000000           mov     ecx,3
+000013F6 B000                 mov     al,0
+000013F8 8807                 mov     [edi],al
+000013FA 32C0                 xor     al,al
+000013FC 884701               mov     [edi+1],al
+000013FF 884702               mov     [edi+2],al
+00001402 83C703               add     edi,3
+00001405 49                   dec     ecx
+00001406 75EE                 jne     short 000013F6h
+00001408 C3                   ret
+00001409 8B35D01D0000         mov     esi,ds:[1DD0h]
+0000140F 8935AE1D0000         mov     ds:[1DAEh],esi
+00001415 8B3DE01D0000         mov     edi,ds:[1DE0h]
+0000141B 33C0                 xor     eax,eax
+0000141D 8B1D131F0000         mov     ebx,ds:[1F13h]
+00001423 C1E308               shl     ebx,8
+00001426 C605A91D0000C8       mov     byte ptr ds:[1DA9h],0C8h
+0000142D BA00000000           mov     edx,0
+00001432 66B98000             mov     cx,80h
+00001436 8B35AE1D0000         mov     esi,ds:[1DAEh]
+0000143C 668B06               mov     ax,[esi]
+0000143F 8B35CC1D0000         mov     esi,ds:[1DCCh]
+00001445 02E7                 add     ah,bh
+00001447 03F0                 add     esi,eax
+00001449 8A06                 mov     al,[esi]
+0000144B 8AD8                 mov     bl,al
+0000144D C0E804               shr     al,4
+00001450 C0E004               shl     al,4
+00001453 2AD8                 sub     bl,al
+00001455 2A9A0C1E0000         sub     bl,[edx+1E0Ch]
+0000145B 7302                 jae     short 0000145Fh
+0000145D B300                 mov     bl,0
+0000145F 02C3                 add     al,bl
+00001461 8AE0                 mov     ah,al
+00001463 668907               mov     [edi],ax
+00001466 8305AE1D000004       add     dword ptr ds:[1DAEh],4
+0000146D 83C202               add     edx,2
+00001470 83C702               add     edi,2
+00001473 6649                 dec     cx
+00001475 75BF                 jne     short 00001436h
+00001477 83C740               add     edi,40h
+0000147A FE0DA91D0000         dec     byte ptr ds:[1DA9h]
+00001480 75AB                 jne     short 0000142Dh
+00001482 C3                   ret
+00001483 EB08                 jmp     short 0000148Dh
+0000148D BB40010000           mov     ebx,140h
+00001492 B805000000           mov     eax,5
+00001497 F7E3                 mul     ebx
+00001499 BB23000000           mov     ebx,23h
+0000149E F7E3                 mul     ebx
+000014A0 8B35E41D0000         mov     esi,ds:[1DE4h]
+000014A6 03F0                 add     esi,eax
+000014A8 A1C41D0000           mov     eax,ds:[1DC4h]
+000014AD 03F0                 add     esi,eax
+000014AF 03F0                 add     esi,eax
+000014B1 8B3DE01D0000         mov     edi,ds:[1DE0h]
+000014B7 81C740380000         add     edi,3840h
+000014BD BB04000000           mov     ebx,4
+000014C2 BA04000000           mov     edx,4
+000014C7 66C705AA1D00009000   mov     word ptr ds:[1DAAh],90h
+000014D0 B950000000           mov     ecx,50h
+000014D5 8B06                 mov     eax,[esi]
+000014D7 83F911               cmp     ecx,11h
+000014DA 7C23                 jl      short 000014FFh
+000014DC C1C810               ror     eax,10h
+000014DF 3C01                 cmp     al,1
+000014E1 7503                 jne     short 000014E6h
+000014E3 8A4702               mov     al,[edi+2]
+000014E6 80FC01               cmp     ah,1
+000014E9 7503                 jne     short 000014EEh
+000014EB 8A6703               mov     ah,[edi+3]
+000014EE C1C010               rol     eax,10h
+000014F1 3C01                 cmp     al,1
+000014F3 7502                 jne     short 000014F7h
+000014F5 8A07                 mov     al,[edi]
+000014F7 80FC01               cmp     ah,1
+000014FA 7503                 jne     short 000014FFh
+000014FC 8A6701               mov     ah,[edi+1]
+000014FF 8907                 mov     [edi],eax
+00001501 03F3                 add     esi,ebx
+00001503 03FA                 add     edi,edx
+00001505 49                   dec     ecx
+00001506 75CD                 jne     short 000014D5h
+00001508 B805000000           mov     eax,5
+0000150D 66B94001             mov     cx,140h
+00001511 66F7E1               mul     cx
+00001514 2D40010000           sub     eax,140h
+00001519 03F0                 add     esi,eax
+0000151B BA04000000           mov     edx,4
+00001520 66FF0DAA1D0000       dec     word ptr ds:[1DAAh]
+00001527 75A7                 jne     short 000014D0h
+00001529 C3                   ret
+0000152A EB03                 jmp     short 0000152Fh
+0000152E 00B900000000         add     [ecx],bh
+00001534 33C0                 xor     eax,eax
+00001536 AC                   lodsb
+00001537 F725BA1D0000         mul     dword ptr ds:[1DBAh]
+0000153D C1E808               shr     eax,8
+00001540 83F83F               cmp     eax,3Fh
+00001543 7605                 jbe     short 0000154Ah
+00001545 B83F000000           mov     eax,3Fh
+0000154A A22C150000           mov     ds:[152Ch],al
+0000154F AC                   lodsb
+00001550 F725BA1D0000         mul     dword ptr ds:[1DBAh]
+00001556 C1E808               shr     eax,8
+00001559 83F83F               cmp     eax,3Fh
+0000155C 7605                 jbe     short 00001563h
+0000155E B83F000000           mov     eax,3Fh
+00001563 A22D150000           mov     ds:[152Dh],al
+00001568 AC                   lodsb
+00001569 F725BA1D0000         mul     dword ptr ds:[1DBAh]
+0000156F C1E808               shr     eax,8
+00001572 83F83F               cmp     eax,3Fh
+00001575 7605                 jbe     short 0000157Ch
+00001577 B83F000000           mov     eax,3Fh
+0000157C A22E150000           mov     ds:[152Eh],al
+00001581 BAC8030000           mov     edx,3C8h
+00001586 8AC1                 mov     al,cl
+00001588 EE                   out     dx,al
+00001589 42                   inc     edx
+0000158A A02C150000           mov     al,ds:[152Ch]
+0000158F EE                   out     dx,al
+00001590 A02D150000           mov     al,ds:[152Dh]
+00001595 EE                   out     dx,al
+00001596 A02E150000           mov     al,ds:[152Eh]
+0000159B EE                   out     dx,al
+0000159C 41                   inc     ecx
+0000159D 81F9FF000000         cmp     ecx,0FFh
+000015A3 768F                 jbe     short 00001534h
+000015A5 C3                   ret
+000015A6 0100                 add     [eax],eax
+000015A8 8B35E81D0000         mov     esi,ds:[1DE8h]
+000015AE 8B3DE01D0000         mov     edi,ds:[1DE0h]
+000015B4 81C716690000         add     edi,6916h
+000015BA 66BA2000             mov     dx,20h
+000015BE 668B0DA6150000       mov     cx,ds:[15A6h]
+000015C5 8A06                 mov     al,[esi]
+000015C7 FEC8                 dec     al
+000015C9 7502                 jne     short 000015CDh
+000015CB 8807                 mov     [edi],al
+000015CD 47                   inc     edi
+000015CE 46                   inc     esi
+000015CF 6649                 dec     cx
+000015D1 75F2                 jne     short 000015C5h
+000015D3 33C0                 xor     eax,eax
+000015D5 66B84001             mov     ax,140h
+000015D9 662B05A6150000       sub     ax,ds:[15A6h]
+000015E0 03F8                 add     edi,eax
+000015E2 33C0                 xor     eax,eax
+000015E4 66B81401             mov     ax,114h
+000015E8 662B05A6150000       sub     ax,ds:[15A6h]
+000015EF 03F0                 add     esi,eax
+000015F1 664A                 dec     dx
+000015F3 75C9                 jne     short 000015BEh
+000015F5 C3                   ret
+000015F6 BA08520000           mov     edx,5208h
+000015FB E8D2F5FFFF           call    00000BD2h
+00001600 8915CC250000         mov     ds:[25CCh],edx
+00001606 BA349E0000           mov     edx,9E34h
+0000160B E8C2F5FFFF           call    00000BD2h
+00001610 8915D81D0000         mov     ds:[1DD8h],edx
+00001616 BA00FA0000           mov     edx,0FA00h
+0000161B E8B2F5FFFF           call    00000BD2h
+00001620 8915E01D0000         mov     ds:[1DE0h],edx
+00001626 BA905F0100           mov     edx,15F90h
+0000162B E8A2F5FFFF           call    00000BD2h
+00001630 8915CC1D0000         mov     ds:[1DCCh],edx
+00001636 BA00180100           mov     edx,11800h
+0000163B E892F5FFFF           call    00000BD2h
+00001640 8915DC1D0000         mov     ds:[1DDCh],edx
+00001646 BA00000200           mov     edx,20000h
+0000164B E882F5FFFF           call    00000BD2h
+00001650 8915D01D0000         mov     ds:[1DD0h],edx
+00001656 BA00000100           mov     edx,10000h
+0000165B E872F5FFFF           call    00000BD2h
+00001660 8915D41D0000         mov     ds:[1DD4h],edx
+00001666 B800FA0000           mov     eax,0FA00h
+0000166B BB05000000           mov     ebx,5
+00001670 F7E3                 mul     ebx
+00001672 8BD0                 mov     edx,eax
+00001674 E859F5FFFF           call    00000BD2h
+00001679 8915E41D0000         mov     ds:[1DE4h],edx
+0000167F BA80250000           mov     edx,2580h
+00001684 E849F5FFFF           call    00000BD2h
+00001689 8915E81D0000         mov     ds:[1DE8h],edx
+0000168F BAFFFF0200           mov     edx,2FFFFh
+00001694 E839F5FFFF           call    00000BD2h
+00001699 8915C50E0000         mov     ds:[0EC5h],edx
+0000169F E884140100           call    00012B28h
+000016A4 E808210100           call    000137B1h
+000016A9 0F8266060000         jb      near ptr 00001D15h
+000016AF BE741D0000           mov     esi,1D74h
+000016B4 E88F160100           call    00012D48h
+000016B9 0F8256060000         jb      near ptr 00001D15h
+000016BF 8935871D0000         mov     ds:[1D87h],esi
+000016C5 B802EE0000           mov     eax,0EE02h
+000016CA CD31                 int     31h
+000016CC B813000000           mov     eax,13h
+000016D1 CD10                 int     10h
+000016D3 C705AE1D0000D4250000 mov     dword ptr ds:[1DAEh],25D4h
+000016DD 8B3DCC250000         mov     edi,ds:[25CCh]
+000016E3 B800000000           mov     eax,0
+000016E8 E8C6F7FFFF           call    00000EB3h
+000016ED 33C0                 xor     eax,eax
+000016EF 66A1C10E0000         mov     ax,ds:[0EC1h]
+000016F5 A3D0250000           mov     ds:[25D0h],eax
+000016FA C705AE1D0000281F0000 mov     dword ptr ds:[1DAEh],1F28h
+00001704 8B3DDC1D0000         mov     edi,ds:[1DDCh]
+0000170A B800000000           mov     eax,0
+0000170F E89FF7FFFF           call    00000EB3h
+00001714 C705AE1D00004F1F0000 mov     dword ptr ds:[1DAEh],1F4Fh
+0000171E 8B3DD81D0000         mov     edi,ds:[1DD8h]
+00001724 B800000000           mov     eax,0
+00001729 E885F7FFFF           call    00000EB3h
+0000172E C705AE1D00003C1F0000 mov     dword ptr ds:[1DAEh],1F3Ch
+00001738 8B3DCC1D0000         mov     edi,ds:[1DCCh]
+0000173E B800000000           mov     eax,0
+00001743 E86BF7FFFF           call    00000EB3h
+00001748 BFAC220000           mov     edi,22ACh
+0000174D E887FCFFFF           call    000013D9h
+00001752 C705AE1D0000771F0000 mov     dword ptr ds:[1DAEh],1F77h
+0000175C 8B3DE81D0000         mov     edi,ds:[1DE8h]
+00001762 B800000000           mov     eax,0
+00001767 E847F7FFFF           call    00000EB3h
+0000176C C705AE1D0000641F0000 mov     dword ptr ds:[1DAEh],1F64h
+00001776 BF13290000           mov     edi,2913h
+0000177B B800000000           mov     eax,0
+00001780 E82EF7FFFF           call    00000EB3h
+00001785 BF8C1F0000           mov     edi,1F8Ch
+0000178A E84AFCFFFF           call    000013D9h
+0000178F 8B3DE01D0000         mov     edi,ds:[1DE0h]
+00001795 B9803E0000           mov     ecx,3E80h
+0000179A 33C0                 xor     eax,eax
+0000179C B001                 mov     al,1
+0000179E B401                 mov     ah,1
+000017A0 0FC8                 bswap   eax
+000017A2 B001                 mov     al,1
+000017A4 B401                 mov     ah,1
+000017A6 F3AB                 rep stosd
+000017A8 8B3DE41D0000         mov     edi,ds:[1DE4h]
+000017AE B800FA0000           mov     eax,0FA00h
+000017B3 BB05000000           mov     ebx,5
+000017B8 F7E3                 mul     ebx
+000017BA C1E802               shr     eax,2
+000017BD 8BC8                 mov     ecx,eax
+000017BF B801010101           mov     eax,1010101h
+000017C4 F3AB                 rep stosd
+000017C6 8B3DD01D0000         mov     edi,ds:[1DD0h]
+000017CC C605A81D0000C8       mov     byte ptr ds:[1DA8h],0C8h
+000017D3 66C705AA1D00000001   mov     word ptr ds:[1DAAh],100h
+000017DC 33DB                 xor     ebx,ebx
+000017DE 668B1DAA1D0000       mov     bx,ds:[1DAAh]
+000017E5 83C320               add     ebx,20h
+000017E8 F7DB                 neg     ebx
+000017EA 33C0                 xor     eax,eax
+000017EC A0A81D0000           mov     al,ds:[1DA8h]
+000017F1 83E864               sub     eax,64h
+000017F4 C1E007               shl     eax,7
+000017F7 F7D8                 neg     eax
+000017F9 6699                 cwd
+000017FB 66F7FB               idiv    bx
+000017FE 047F                 add     al,7Fh
+00001800 AA                   stosb
+00001801 B800240000           mov     eax,2400h
+00001806 33D2                 xor     edx,edx
+00001808 33DB                 xor     ebx,ebx
+0000180A 668B1DAA1D0000       mov     bx,ds:[1DAAh]
+00001811 83C320               add     ebx,20h
+00001814 66F7FB               idiv    bx
+00001817 04E0                 add     al,0E0h
+00001819 AA                   stosb
+0000181A 66FF0DAA1D0000       dec     word ptr ds:[1DAAh]
+00001821 75B9                 jne     short 000017DCh
+00001823 FE0DA81D0000         dec     byte ptr ds:[1DA8h]
+00001829 75A8                 jne     short 000017D3h
+0000182B BF0C1E0000           mov     edi,1E0Ch
+00001830 B940000000           mov     ecx,40h
+00001835 B800000000           mov     eax,0
+0000183A F3AB                 rep stosd
+0000183C BF0C1E0000           mov     edi,1E0Ch
+00001841 83C740               add     edi,40h
+00001844 B9C0000000           mov     ecx,0C0h
+00001849 B0C0                 mov     al,0C0h
+0000184B 8AD9                 mov     bl,cl
+0000184D 2AC3                 sub     al,bl
+0000184F 33D2                 xor     edx,edx
+00001851 66BB1000             mov     bx,10h
+00001855 66F7FB               idiv    bx
+00001858 AA                   stosb
+00001859 49                   dec     ecx
+0000185A 75ED                 jne     short 00001849h
+0000185C C705B21D000015260000 mov     dword ptr ds:[1DB2h],2615h
+00001866 A1E41D0000           mov     eax,ds:[1DE4h]
+0000186B A3AE1D0000           mov     ds:[1DAEh],eax
+00001870 C7050B1F000008000000 mov     dword ptr ds:[1F0Bh],8
+0000187A C7050F1F000023000000 mov     dword ptr ds:[1F0Fh],23h
+00001884 E84FF9FFFF           call    000011D8h
+00001889 BA00000000           mov     edx,0
+0000188E 8B35871D0000         mov     esi,ds:[1D87h]
+00001894 E8448C0100           call    0001A4DDh
+00001899 66C705AA1D00001400   mov     word ptr ds:[1DAAh],14h
+000018A2 E846F1FFFF           call    000009EDh
+000018A7 66FF0DAA1D0000       dec     word ptr ds:[1DAAh]
+000018AE 75F2                 jne     short 000018A2h
+000018B0 66C705AC1D00004601   mov     word ptr ds:[1DACh],146h
+000018B9 BE02000000           mov     esi,2
+000018BE BF04040000           mov     edi,404h
+000018C3 B900000000           mov     ecx,0
+000018C8 66890DAA1D0000       mov     ds:[1DAAh],cx
+000018CF 66C125AA1D000002     shl     word ptr ds:[1DAAh],2
+000018D7 DF05AA1D0000         fild    word ptr ds:[1DAAh]
+000018DD DE35AC1D0000         fidiv   word ptr ds:[1DACh]
+000018E3 D9FE                 fsin
+000018E5 DE0D00000000         fimul   word ptr ds:[0]
+000018EB DF1DAA1D0000         fistp   word ptr ds:[1DAAh]
+000018F1 66A1AA1D0000         mov     ax,ds:[1DAAh]
+000018F7 668906               mov     [esi],ax
+000018FA 66890DAA1D0000       mov     ds:[1DAAh],cx
+00001901 668105AA1D00008000   add     word ptr ds:[1DAAh],80h
+0000190A 66C125AA1D000002     shl     word ptr ds:[1DAAh],2
+00001912 DF05AA1D0000         fild    word ptr ds:[1DAAh]
+00001918 DE35AC1D0000         fidiv   word ptr ds:[1DACh]
+0000191E D9FE                 fsin
+00001920 DE0D00000000         fimul   word ptr ds:[0]
+00001926 DF1DAA1D0000         fistp   word ptr ds:[1DAAh]
+0000192C 66A1AA1D0000         mov     ax,ds:[1DAAh]
+00001932 668907               mov     [edi],ax
+00001935 83C702               add     edi,2
+00001938 83C602               add     esi,2
+0000193B 41                   inc     ecx
+0000193C 81F901020000         cmp     ecx,201h
+00001942 7284                 jb      short 000018C8h
+00001944 C705BA1D000005000000 mov     dword ptr ds:[1DBAh],5
+0000194E C705131F000000000000 mov     dword ptr ds:[1F13h],0
+00001958 E8CEF7FFFF           call    0000112Bh
+0000195D E846FCFFFF           call    000015A8h
+00001962 E886F0FFFF           call    000009EDh
+00001967 BE8C1F0000           mov     esi,1F8Ch
+0000196C E8B9FBFFFF           call    0000152Ah
+00001971 BF00000A00           mov     edi,0A0000h
+00001976 B9803E0000           mov     ecx,3E80h
+0000197B 8B35E01D0000         mov     esi,ds:[1DE0h]
+00001981 F3A5                 rep movsd
+00001983 BE1A040000           mov     esi,41Ah
+00001988 668B06               mov     ax,[esi]
+0000198B BE1C040000           mov     esi,41Ch
+00001990 668906               mov     [esi],ax
+00001993 FF05131F0000         inc     dword ptr ds:[1F13h]
+00001999 813DBA1D0000F0000000 cmp     dword ptr ds:[1DBAh],0F0h
+000019A3 7C34                 jl      short 000019D9h
+000019A5 A1131F0000           mov     eax,ds:[1F13h]
+000019AA 3D80000000           cmp     eax,80h
+000019AF 7C28                 jl      short 000019D9h
+000019B1 83E87F               sub     eax,7Fh
+000019B4 C1E804               shr     eax,4
+000019B7 8BD8                 mov     ebx,eax
+000019B9 43                   inc     ebx
+000019BA 83FB11               cmp     ebx,11h
+000019BD 7C06                 jl      short 000019C5h
+000019BF FF05C01D0000         inc     dword ptr ds:[1DC0h]
+000019C5 83FB0B               cmp     ebx,0Bh
+000019C8 770F                 ja      short 000019D9h
+000019CA D1E3                 shl     ebx,1
+000019CC 668B83EC1D0000       mov     ax,[ebx+1DECh]
+000019D3 66A3A6150000         mov     ds:[15A6h],ax
+000019D9 66BA6000             mov     dx,60h
+000019DD EC                   in      al,dx
+000019DE 3C01                 cmp     al,1
+000019E0 7506                 jne     short 000019E8h
+000019E2 FF05C01D0000         inc     dword ptr ds:[1DC0h]
+000019E8 833DC01D000001       cmp     dword ptr ds:[1DC0h],1
+000019EF 7C0E                 jl      short 000019FFh
+000019F1 FF0DBA1D0000         dec     dword ptr ds:[1DBAh]
+000019F7 FF0DBA1D0000         dec     dword ptr ds:[1DBAh]
+000019FD EB18                 jmp     short 00001A17h
+000019FF 813DBA1D0000FE000000 cmp     dword ptr ds:[1DBAh],0FEh
+00001A09 730C                 jae     short 00001A17h
+00001A0B FF05BA1D0000         inc     dword ptr ds:[1DBAh]
+00001A11 FF05BA1D0000         inc     dword ptr ds:[1DBAh]
+00001A17 833DBA1D000005       cmp     dword ptr ds:[1DBAh],5
+00001A1E 0F8D34FFFFFF         jge     near ptr 00001958h
+00001A24 C705C01D000000000000 mov     dword ptr ds:[1DC0h],0
+00001A2E C705BA1D000000000000 mov     dword ptr ds:[1DBAh],0
+00001A38 BE8C1F0000           mov     esi,1F8Ch
+00001A3D E8E8FAFFFF           call    0000152Ah
+00001A42 8B3DE01D0000         mov     edi,ds:[1DE0h]
+00001A48 B9803E0000           mov     ecx,3E80h
+00001A4D 33C0                 xor     eax,eax
+00001A4F F3AB                 rep stosd
+00001A51 66C705AA1D00003C00   mov     word ptr ds:[1DAAh],3Ch
+00001A5A E88EEFFFFF           call    000009EDh
+00001A5F 66FF0DAA1D0000       dec     word ptr ds:[1DAAh]
+00001A66 75F2                 jne     short 00001A5Ah
+00001A68 BE1A040000           mov     esi,41Ah
+00001A6D 668B06               mov     ax,[esi]
+00001A70 BE1C040000           mov     esi,41Ch
+00001A75 668906               mov     [esi],ax
+00001A78 BE1A040000           mov     esi,41Ah
+00001A7D 668B06               mov     ax,[esi]
+00001A80 BE1C040000           mov     esi,41Ch
+00001A85 668906               mov     [esi],ax
+00001A88 C705BA1D000002000000 mov     dword ptr ds:[1DBAh],2
+00001A92 C705081E000000000000 mov     dword ptr ds:[1E08h],0
+00001A9C C7050F29000000000000 mov     dword ptr ds:[290Fh],0
+00001AA6 C705131F000000000000 mov     dword ptr ds:[1F13h],0
+00001AB0 E854F9FFFF           call    00001409h
+00001AB5 E8ECF8FFFF           call    000013A6h
+00001ABA E8C4F9FFFF           call    00001483h
+00001ABF E89BF8FFFF           call    0000135Fh
+00001AC4 833DC81D000000       cmp     dword ptr ds:[1DC8h],0
+00001ACB 7712                 ja      short 00001ADFh
+00001ACD 813DBA1D0000FF000000 cmp     dword ptr ds:[1DBAh],0FFh
+00001AD7 7306                 jae     short 00001ADFh
+00001AD9 FF05BA1D0000         inc     dword ptr ds:[1DBAh]
+00001ADF E809EFFFFF           call    000009EDh
+00001AE4 BEAC220000           mov     esi,22ACh
+00001AE9 E83CFAFFFF           call    0000152Ah
+00001AEE BF00000A00           mov     edi,0A0000h
+00001AF3 8B35E01D0000         mov     esi,ds:[1DE0h]
+00001AF9 B9803E0000           mov     ecx,3E80h
+00001AFE F3A5                 rep movsd
+00001B00 833DC01D000000       cmp     dword ptr ds:[1DC0h],0
+00001B07 7412                 je      short 00001B1Bh
+00001B09 FF0DC01D0000         dec     dword ptr ds:[1DC0h]
+00001B0F 750A                 jne     short 00001B1Bh
+00001B11 C705041E000004000000 mov     dword ptr ds:[1E04h],4
+00001B1B 803DBF1D000000       cmp     byte ptr ds:[1DBFh],0
+00001B22 7412                 je      short 00001B36h
+00001B24 FE0DBF1D0000         dec     byte ptr ds:[1DBFh]
+00001B2A 750A                 jne     short 00001B36h
+00001B2C C705041E000004000000 mov     dword ptr ds:[1E04h],4
+00001B36 803DBE1D000000       cmp     byte ptr ds:[1DBEh],0
+00001B3D 7412                 je      short 00001B51h
+00001B3F FE0DBE1D0000         dec     byte ptr ds:[1DBEh]
+00001B45 750A                 jne     short 00001B51h
+00001B47 C705041E000004000000 mov     dword ptr ds:[1E04h],4
+00001B51 A1081E0000           mov     eax,ds:[1E08h]
+00001B56 3905C41D0000         cmp     ds:[1DC4h],eax
+00001B5C 7309                 jae     short 00001B67h
+00001B5E 8305C41D000008       add     dword ptr ds:[1DC4h],8
+00001B65 EB0F                 jmp     short 00001B76h
+00001B67 3905C41D0000         cmp     ds:[1DC4h],eax
+00001B6D 7E07                 jle     short 00001B76h
+00001B6F 832DC41D000008       sub     dword ptr ds:[1DC4h],8
+00001B76 BE1A040000           mov     esi,41Ah
+00001B7B 668B06               mov     ax,[esi]
+00001B7E BE1C040000           mov     esi,41Ch
+00001B83 668906               mov     [esi],ax
+00001B86 FF05131F0000         inc     dword ptr ds:[1F13h]
+00001B8C 66BA6000             mov     dx,60h
+00001B90 EC                   in      al,dx
+00001B91 3C01                 cmp     al,1
+00001B93 751F                 jne     short 00001BB4h
+00001B95 C705041E000000000000 mov     dword ptr ds:[1E04h],0
+00001B9F C705C01D000019000000 mov     dword ptr ds:[1DC0h],19h
+00001BA9 FF05C81D0000         inc     dword ptr ds:[1DC8h]
+00001BAF E98E000000           jmp     near ptr 00001C42h
+00001BB4 3C4B                 cmp     al,4Bh
+00001BB6 7541                 jne     short 00001BF9h
+00001BB8 803DBF1D000000       cmp     byte ptr ds:[1DBFh],0
+00001BBF 7538                 jne     short 00001BF9h
+00001BC1 C705041E000001000000 mov     dword ptr ds:[1E04h],1
+00001BCB C605BF1D000019       mov     byte ptr ds:[1DBFh],19h
+00001BD2 812D081E0000A0000000 sub     dword ptr ds:[1E08h],0A0h
+00001BDC 833D081E000000       cmp     dword ptr ds:[1E08h],0
+00001BE3 7D12                 jge     short 00001BF7h
+00001BE5 B8A0000000           mov     eax,0A0h
+00001BEA BB05000000           mov     ebx,5
+00001BEF 4B                   dec     ebx
+00001BF0 F7E3                 mul     ebx
+00001BF2 A3081E0000           mov     ds:[1E08h],eax
+00001BF7 EB49                 jmp     short 00001C42h
+00001BF9 3C4D                 cmp     al,4Dh
+00001BFB 7545                 jne     short 00001C42h
+00001BFD 803DBE1D000000       cmp     byte ptr ds:[1DBEh],0
+00001C04 753C                 jne     short 00001C42h
+00001C06 C705041E000002000000 mov     dword ptr ds:[1E04h],2
+00001C10 C605BE1D000019       mov     byte ptr ds:[1DBEh],19h
+00001C17 8105081E0000A0000000 add     dword ptr ds:[1E08h],0A0h
+00001C21 B8A0000000           mov     eax,0A0h
+00001C26 BB05000000           mov     ebx,5
+00001C2B 4B                   dec     ebx
+00001C2C F7E3                 mul     ebx
+00001C2E 3905081E0000         cmp     ds:[1E08h],eax
+00001C34 760A                 jbe     short 00001C40h
+00001C36 C705081E000000000000 mov     dword ptr ds:[1E08h],0
+00001C40 EB00                 jmp     short 00001C42h
+00001C42 833DC81D000001       cmp     dword ptr ds:[1DC8h],1
+00001C49 7E06                 jle     short 00001C51h
+00001C4B FF0DBA1D0000         dec     dword ptr ds:[1DBAh]
+00001C51 833DC81D000002       cmp     dword ptr ds:[1DC8h],2
+00001C58 7E06                 jle     short 00001C60h
+00001C5A FF0DBA1D0000         dec     dword ptr ds:[1DBAh]
+00001C60 833DBA1D000002       cmp     dword ptr ds:[1DBAh],2
+00001C67 0F8343FEFFFF         jae     near ptr 00001AB0h
+00001C6D B802EE0000           mov     eax,0EE02h
+00001C72 CD31                 int     31h
+00001C74 B803000000           mov     eax,3
+00001C79 CD10                 int     10h
+00001C7B BA861C0000           mov     edx,1C86h

@@ -1,0 +1,25 @@
+[package]
+name = "invit-rs"
+version = "0.1.0"
+edition = "2024"
+description = "ROMANTICA'98 invitasjonsintro av The Phrenetics, portert fra TASM32/DOS32 til Rust"
+
+[lib]
+name = "invit"
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "invit"
+path = "src/main.rs"
+
+# Bare den native versjonen trenger vindu og lyd. WebAssembly-biblioteket har
+# ingen avhengigheter, og bruker nettleserens canvas og en JS-modulspiller.
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+cpal = "0.17"
+minifb = "0.29.0"
+xmrs = "0.15.2"
+xmrsplayer = "0.15.0"
+
+[profile.release]
+opt-level = 3
+lto = true
